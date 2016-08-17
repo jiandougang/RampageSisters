@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="RPBottomBarImageArray">
+        <item >@drawable/ic_message_white_24dp</item>
+        <item>@drawable/ic_account_circle_white_24dp</item>
+        <item>@drawable/ic_discover_white_24dp</item>
+    </string-array>
+
+    <string-array name="RPBottomBarTextArray">
+        <item>消息</item>
+        <item>联系人</item>
+        <item>发现</item>
+    </string-array>
+
+</resources>
