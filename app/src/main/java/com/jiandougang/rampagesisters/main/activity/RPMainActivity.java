@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.jiandougang.rampagesisters.R;
 import com.jiandougang.rampagesisters.base.RPBaseActivity;
-import com.jiandougang.rampagesisters.main.fragment.RPMainFragment;
+import com.jiandougang.rampagesisters.main.fragment.RPEvaluationFragment;
 import com.jiandougang.rampagesisters.main.view.bottombar.RPBottomBar;
 
 /**
@@ -21,7 +21,7 @@ public class RPMainActivity extends RPBaseActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            loadRootFragment(R.id.fl_container, RPMainFragment.newInstance());
+            loadRootFragment(R.id.fl_container, RPEvaluationFragment.newInstance());
         }
 
         initView();
