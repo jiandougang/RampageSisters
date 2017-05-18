@@ -64,7 +64,7 @@ public class BottomBarTab extends FrameLayout {
         mTvTitle = new TextView(context);
         mTvTitle.setText(title);
         LinearLayout.LayoutParams paramsTv = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        paramsTv.topMargin =  (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, getResources().getDisplayMetrics());
+        paramsTv.topMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, getResources().getDisplayMetrics());
         mTvTitle.setTextSize(10);
         mTvTitle.setTextColor(ContextCompat.getColor(context, R.color.tab_unselect));
         mTvTitle.setLayoutParams(paramsTv);
@@ -85,14 +85,14 @@ public class BottomBarTab extends FrameLayout {
         }
     }
 
+    public int getTabPosition() {
+        return mTabPosition;
+    }
+
     public void setTabPosition(int position) {
         mTabPosition = position;
         if (position == 0) {
             setSelected(true);
         }
-    }
-
-    public int getTabPosition() {
-        return mTabPosition;
     }
 }

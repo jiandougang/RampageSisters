@@ -11,8 +11,23 @@ public class EvaluationListBean implements Serializable {
     //    是否匿名，0不匿名，1匿名
     public int anonymous;
     //    评论图片列表
-    public List<EaluationPicBean> attachments;
+    public List<EvaluationPicBean> attachments;
     public AvatarBean avatar;
+    //    内容信息
+    public String content;
+    //    评论时间
+    public String creatTime;
+    //    评论id
+    public int evaluationId;
+    //    评分
+    public int grade;
+    //    商品id
+    public int sid;
+    //    小区id
+    public String orderId;
+    public String userName;
+    //回复列表内容
+    public List<RPEvaluatereplysBean> evaluatereplys;
 
     @Override
     public String toString() {
@@ -33,7 +48,7 @@ public class EvaluationListBean implements Serializable {
     /**
      * 评论的图片信息
      */
-    public class EaluationPicBean implements Serializable {
+    public class EvaluationPicBean implements Serializable {
         public int height;
         public int width;
         public int x;
@@ -73,21 +88,5 @@ public class EvaluationListBean implements Serializable {
                     '}';
         }
     }
-
-    //    内容信息
-    public String content;
-    //    评论时间
-    public String creatTime;
-    //    评论id
-    public int evaluationId;
-    //    评分
-    public int grade;
-    //    商品id
-    public int sid;
-    //    小区id
-    public String orderId;
-    public String userName;
-    //回复列表内容
-    public List<RPEvaluatereplysBean> evaluatereplys;
 
 }

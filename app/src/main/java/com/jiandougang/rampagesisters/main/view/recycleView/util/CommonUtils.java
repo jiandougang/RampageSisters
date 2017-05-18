@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 /**
- *
  * Created by mabeijianxi on 2016/1/13.
  */
 public class CommonUtils {
@@ -24,6 +23,7 @@ public class CommonUtils {
         con.getWindowManager().getDefaultDisplay().getMetrics(metric);
         return metric.widthPixels;     // 屏幕宽度（像素）
     }
+
     public static int getScreenSizeHeight(Activity con) {
         DisplayMetrics metric = new DisplayMetrics();
         con.getWindowManager().getDefaultDisplay().getMetrics(metric);
@@ -75,6 +75,55 @@ public class CommonUtils {
     }
 
     /**
+     * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
+     */
+    public static int dip2px(Context context, float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
+
+    /**
+     * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
+     */
+    public static int px2dip(Context context, float pxValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (pxValue / scale + 0.5f);
+    }
+
+    public static void errorNetMes(Context context) {
+        if (isNetworkConnected(context)) {
+            Toast.makeText(context, "服务器链接错误", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "网络链接错误", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    /**
+     * 获取状态栏高度
+     *
+     * @param v
+     * @return
+     */
+    public static int getStatusBarHeight(View v) {
+        if (v == null) {
+            return 0;
+        }
+        Rect frame = new Rect();
+        v.getWindowVisibleDisplayFrame(frame);
+        return frame.top;
+    }
+
+    public static void soonToast(Context context, String text) {
+        if (toast == null) {
+            toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+        }
+        toast.setText(text);//将文本设置为toast
+        toast.show();
+
+    }
+
+    /**
      * 判断MOBILE网络是否可用
      *
      * @param context
@@ -91,51 +140,5 @@ public class CommonUtils {
             }
         }
         return false;
-    }
-
-
-    /**
-     * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
-     */
-    public static int dip2px(Context context, float dpValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dpValue * scale + 0.5f);
-    }
-
-    /**
-     * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
-     */
-    public static int px2dip(Context context, float pxValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (pxValue / scale + 0.5f);
-    }
-
-    public static void errorNetMes(Context context){
-        if(isNetworkConnected(context)){
-            Toast.makeText(context, "服务器链接错误", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(context,"网络链接错误", Toast.LENGTH_SHORT).show();
-        }
-
-    }
-    /** 获取状态栏高度
-     * @param v
-     * @return
-     */
-    public static int getStatusBarHeight(View v) {
-        if (v == null) {
-            return 0;
-        }
-        Rect frame = new Rect();
-        v.getWindowVisibleDisplayFrame(frame);
-        return frame.top;
-    }
-    public static void soonToast(Context context, String text) {
-        if (toast == null) {
-            toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
-        }
-        toast.setText(text);//将文本设置为toast
-        toast.show();
-
     }
 }

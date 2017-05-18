@@ -1,0 +1,38 @@
+<!--<?xml version="1.0" encoding="utf-8"?>--><!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:background="@color/black">-->
+
+<!--<com.jiandougang.rampagesisters.main.view.photoview.PhotoView--><!--android:id="@+id/pv"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="center_horizontal"--><!--android:src="@mipmap/eye" />-->
+
+<!--<ProgressBar--><!--android:id="@+id/pb"--><!--style="@android:style/Widget.Holo.ProgressBar"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="center"--><!--android:progressDrawable="@drawable/progressbar_drawable"--><!--android:visibility="gone" />--><!--</FrameLayout>-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="evaluationBean"
+            type="com.jiandougang.rampagesisters.main.model.RPEvaluationBean" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+
+        <com.jiandougang.rampagesisters.main.view.photoview.PhotoView
+            android:id="@+id/pv_picture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            fresco:placeholderImage="@mipmap/clip" />
+
+        <ProgressBar
+            android:id="@+id/pb"
+            style="@android:style/Widget.Holo.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:progressDrawable="@drawable/progressbar_drawable"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</layout>

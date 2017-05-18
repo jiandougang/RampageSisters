@@ -5,6 +5,10 @@
     <color name="colorAccent">#FF4081</color>
     <color name="tab_unselect">#c9c9c9</color>
 
-
-
+    <color name="black">#000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="table_bg">#DADADA</color>
+    <color name="table_gray">#DADADA</color>
+    <color name="table_light_white">#f0f0f0</color>
 </resources>

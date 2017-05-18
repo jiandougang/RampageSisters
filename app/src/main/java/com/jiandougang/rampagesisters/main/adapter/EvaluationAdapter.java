@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jiandougang.rampagesisters.R;
 import com.jiandougang.rampagesisters.databinding.AdapterFriendCircleBinding;
+import com.jiandougang.rampagesisters.main.model.EvaluationListBean;
 import com.jiandougang.rampagesisters.main.model.RPEvaluationBean;
 
 import java.util.ArrayList;
@@ -32,14 +33,9 @@ public class EvaluationAdapter extends RecyclerView.Adapter<EvaluationAdapter.Ev
     private EvaluationGvPicAdaper mEvaluationGvPicAdaper;
 
 
-    public ArrayList<RPEvaluationBean> getRpEvaluationBeanArrayList() {
-        return rpEvaluationBeanArrayList;
-    }
-
-
-    public EvaluationAdapter(Context context) {
+    public EvaluationAdapter(Context context, ArrayList<RPEvaluationBean> rpEvaluationBeanArrayList) {
         this.mContext = context;
-        rpEvaluationBeanArrayList = new ArrayList<>();
+        this.rpEvaluationBeanArrayList = rpEvaluationBeanArrayList;
 
 //        适配单图放大比例
         String sTimes = mContext.getResources().getString(R.string.times);
@@ -63,9 +59,10 @@ public class EvaluationAdapter extends RecyclerView.Adapter<EvaluationAdapter.Ev
 
     }
 
-    public void addEaluationDataAll(ArrayList<RPEvaluationBean> data) {
+    public void addEvaluationDataAll(ArrayList<RPEvaluationBean> data) {
         if (data != null) {
             rpEvaluationBeanArrayList.addAll(data);
+//            notifyDataSetChanged();
         }
 
     }
@@ -97,11 +94,10 @@ public class EvaluationAdapter extends RecyclerView.Adapter<EvaluationAdapter.Ev
         holder.bind(rpEvaluationBeanArrayList.get(position));
 
         holder.layoutManager = new GridLayoutManager(mContext, 3, GridLayoutManager.VERTICAL, false);
-        holder.evaluationPicAdapter = new EvaluationPicAdapter();
+        holder.evaluationPicAdapter = new EvaluationPicAdapter(mContext, new ArrayList<EvaluationListBean.EvaluationPicBean>());
         holder.rcPicture.setLayoutManager(holder.layoutManager);
         holder.rcPicture.setAdapter(holder.evaluationPicAdapter);
     }
-
 
 
     public static class EvaluationHolder extends RecyclerView.ViewHolder {
@@ -118,16 +114,16 @@ public class EvaluationAdapter extends RecyclerView.Adapter<EvaluationAdapter.Ev
 
         }
 
-        public void bind(@NonNull RPEvaluationBean evaluationBean) {
-            mBinding.setEvaluationBean(evaluationBean);
-        }
-
         @BindingAdapter("url")
         public static void setHeadPortrait(final SimpleDraweeView view, String url) {
             if (url != null) {
                 Uri uri = Uri.parse(url);
                 view.setImageURI(uri);
             }
+        }
+
+        public void bind(@NonNull RPEvaluationBean evaluationBean) {
+            mBinding.setEvaluationBean(evaluationBean);
         }
 
     }

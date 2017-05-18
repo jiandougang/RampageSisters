@@ -5,29 +5,18 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <RelativeLayout
-        android:id="@+id/rl_title_bar"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_alignParentTop="true"
-        android:background="@color/colorPrimaryDark">
-
-    </RelativeLayout>
-
-
     <FrameLayout
         android:id="@+id/fl_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/rl_title_bar" />
+        android:layout_height="match_parent" />
 
     <com.jiandougang.rampagesisters.main.view.bottombar.RPBottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        app:srcArray="@array/RPBottomBarImageArray"
-        app:textArray="@array/RPBottomBarTextArray"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom" />
+        android:layout_gravity="bottom"
+        app:srcArray="@array/RPBottomBarImageArray"
+        app:textArray="@array/RPBottomBarTextArray" />
 
 </RelativeLayout>

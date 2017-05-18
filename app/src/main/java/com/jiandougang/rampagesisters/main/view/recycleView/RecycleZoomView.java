@@ -17,7 +17,6 @@ import com.jiandougang.rampagesisters.main.view.recycleView.util.AnimUtil;
 import java.util.ArrayList;
 
 /**
- *
  * Created by kai.wang on 3/18/14.
  */
 public class RecycleZoomView extends WrapRecyclerView {

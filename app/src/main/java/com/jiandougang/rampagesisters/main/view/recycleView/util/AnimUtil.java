@@ -5,7 +5,6 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
 /**
- *
  * Created by kai.wang on 3/18/14.
  */
 public class AnimUtil {
@@ -26,6 +25,7 @@ public class AnimUtil {
                     v.requestLayout();
                 }
             }
+
             @Override
             public boolean willChangeBounds() {
                 return true;

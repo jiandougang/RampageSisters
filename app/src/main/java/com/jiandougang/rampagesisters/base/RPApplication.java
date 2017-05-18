@@ -4,10 +4,10 @@ import android.app.Application;
 
 import com.avos.avoscloud.AVOSCloud;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
- *
  * Created by wuguohong on 16/8/26.
  */
 public class RPApplication extends Application {
@@ -18,7 +18,12 @@ public class RPApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Fresco.initialize(this);
+
+        ImagePipelineConfig config = ImagePipelineConfig.newBuilder(this)
+                .setDownsampleEnabled(true).setDownsampleEnabled(true)
+                .build();
+
+        Fresco.initialize(this, config);
 
         AVOSCloud.initialize(this, LeadCloudAppId, LeadCloudAppKey);
 

@@ -154,19 +154,6 @@
                     android:textColor="#8e8e8e"
                     android:textSize="9.5sp" />
 
-                <!--<com.mabeijianxi.circle_of_friends.view.linearlistview.LinearListView-->
-                <!--android:id="@+id/lv_comments_details"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginRight="5dp"-->
-                <!--android:layout_marginTop="9.5dp"-->
-                <!--android:background="@drawable/event_di"-->
-                <!--android:orientation="vertical"-->
-                <!--android:paddingBottom="5dp"-->
-                <!--android:paddingLeft="8dp"-->
-                <!--android:paddingRight="8dp"-->
-                <!--android:paddingTop="16dp"-->
-                <!--android:visibility="gone" />-->
 
             </LinearLayout>
         </LinearLayout>

@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.jiandougang.rampagesisters.R;
 import com.jiandougang.rampagesisters.base.RPBaseFragment;
@@ -51,7 +52,7 @@ public class RPEvaluationFragment extends RPBaseFragment implements RPEvaluation
 
     private void initData() {
 //        presenter.findFriendCircleTaking(rpEvaluationBeanArrayList, this);
-        presenter.findFriendCircleTakingfuck(rpEvaluationBeanArrayList, this);
+        presenter.findFriendCircleTakingfuck(this);
 
 
 //        String[] strs = new String[]{"jack", "ann", "one", "two", "three", "four"};
@@ -111,13 +112,13 @@ public class RPEvaluationFragment extends RPBaseFragment implements RPEvaluation
     }
 
     private void initView(View view) {
-        adapter = new EvaluationAdapter(getContext());
+        adapter = new EvaluationAdapter(getContext(), rpEvaluationBeanArrayList);
 
         rcContent = (RecycleZoomView) view.findViewById(R.id.rv_message_content);
         layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rcContent.setLayoutManager(layoutManager);
-        rcContent.setAdapter(adapter);
 
+        rcContent.setAdapter(adapter);
     }
 
     @Override
@@ -128,8 +129,9 @@ public class RPEvaluationFragment extends RPBaseFragment implements RPEvaluation
     }
 
     @Override
-    public void upDateRecycleView() {
-        adapter.addEaluationDataAll(rpEvaluationBeanArrayList);
+    public void upDateRecycleView(ArrayList<RPEvaluationBean> list) {
+        adapter.addEvaluationDataAll(list);
         rcContent.requestLayout();
+        Toast.makeText(getContext(),"下载完成",Toast.LENGTH_LONG).show();
     }
 }

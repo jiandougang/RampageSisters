@@ -13,6 +13,8 @@ import com.jiandougang.rampagesisters.main.view.bottombar.RPBottomBar;
  */
 public class RPMainActivity extends RPBaseActivity {
 
+
+
     private RPBottomBar mRPBottomBar;
 
     @Override
@@ -24,12 +26,15 @@ public class RPMainActivity extends RPBaseActivity {
             loadRootFragment(R.id.fl_container, RPEvaluationFragment.newInstance());
         }
 
+
         initView();
         initEvent();
     }
 
     private void initView() {
+
         mRPBottomBar = (RPBottomBar) findViewById(R.id.bottomBar);
+
 
     }
 

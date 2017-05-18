@@ -53,7 +53,7 @@ public class WrapRecyclerView extends RecyclerView {
 
     @Override
     public void setAdapter(Adapter adapter) {
-
+        super.setAdapter(adapter);
         if (mHeaderViews.isEmpty() && mFootViews.isEmpty()) {
             super.setAdapter(adapter);
         } else {

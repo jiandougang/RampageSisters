@@ -14,12 +14,11 @@ import com.jiandougang.rampagesisters.main.view.recycleView.util.CommonUtils;
 import java.util.List;
 
 /**
- *
  * Created by mabeijianxi on 2016/1/3.
  */
 public class EvaluationGvPicAdaper extends BaseAdapter {
+    private final int mImageWidth;
     private Context mContext;
-    private List<EvaluationListBean.EaluationPicBean> mAttachmentsList;
 //    private ImageLoader mImageLoader = ImageLoader.getInstance();
 //    private DisplayImageOptions mConfig = new DisplayImageOptions.Builder()
 //            .showImageOnLoading(R.drawable.home_youpin)
@@ -29,13 +28,13 @@ public class EvaluationGvPicAdaper extends BaseAdapter {
 //            .cacheOnDisk(true)// 在硬盘中会缓存该图片
 //            .considerExifParams(true)// 会识别图片的方向信息
 //            .build();
+    private List<EvaluationListBean.EvaluationPicBean> mAttachmentsList;
     /**
      * 是否加载图片，主要也是对滑动的优化
      */
     private boolean mIsLoadImage = true;
-    private final int mImageWidth;
 
-    public EvaluationGvPicAdaper(Context mContext, List<EvaluationListBean.EaluationPicBean> attachments, boolean mIsLoadImage) {
+    public EvaluationGvPicAdaper(Context mContext, List<EvaluationListBean.EvaluationPicBean> attachments, boolean mIsLoadImage) {
         this.mContext = mContext;
         this.mAttachmentsList = attachments;
         this.mIsLoadImage = mIsLoadImage;
@@ -52,7 +51,7 @@ public class EvaluationGvPicAdaper extends BaseAdapter {
     }
 
     @Override
-    public EvaluationListBean.EaluationPicBean getItem(int position) {
+    public EvaluationListBean.EvaluationPicBean getItem(int position) {
         return mAttachmentsList.get(position);
     }
 
@@ -113,7 +112,7 @@ public class EvaluationGvPicAdaper extends BaseAdapter {
      * @param mAttachmentsList
      * @param position
      */
-    private void setupCoords(ImageView iv_image, List<EvaluationListBean.EaluationPicBean> mAttachmentsList, int position) {
+    private void setupCoords(ImageView iv_image, List<EvaluationListBean.EvaluationPicBean> mAttachmentsList, int position) {
 //        x方向的第几个
         int xn = position % 3 + 1;
 //        y方向的第几个
@@ -133,7 +132,7 @@ public class EvaluationGvPicAdaper extends BaseAdapter {
         int y0 = points[1] - (height + v) * (yn - 1);
 //        给所有图片添加坐标信息
         for (int i = 0; i < mAttachmentsList.size(); i++) {
-            EvaluationListBean.EaluationPicBean ealuationPicBean = mAttachmentsList.get(i);
+            EvaluationListBean.EvaluationPicBean ealuationPicBean = mAttachmentsList.get(i);
             ealuationPicBean.width = width;
             ealuationPicBean.height = height;
             ealuationPicBean.x = x0 + (i % 3) * (width + h);

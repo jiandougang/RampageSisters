@@ -2,7 +2,7 @@
 <resources>
 
     <string-array name="RPBottomBarImageArray">
-        <item >@drawable/ic_message_white_24dp</item>
+        <item>@drawable/ic_message_white_24dp</item>
         <item>@drawable/ic_account_circle_white_24dp</item>
         <item>@drawable/ic_discover_white_24dp</item>
     </string-array>

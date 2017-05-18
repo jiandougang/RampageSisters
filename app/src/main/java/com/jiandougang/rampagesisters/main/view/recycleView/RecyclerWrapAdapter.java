@@ -12,15 +12,11 @@ import java.util.ArrayList;
  */
 public class RecyclerWrapAdapter extends RecyclerView.Adapter implements WrapperAdapter {
 
-    private RecyclerView.Adapter mAdapter;
-
-    private ArrayList<View> mHeaderViews;
-
-    private ArrayList<View> mFootViews;
-
     static final ArrayList<View> EMPTY_INFO_LIST =
             new ArrayList<>();
-
+    private RecyclerView.Adapter mAdapter;
+    private ArrayList<View> mHeaderViews;
+    private ArrayList<View> mFootViews;
     private int mCurrentPosition;
 
     public RecyclerWrapAdapter(ArrayList<View> mHeaderViews, ArrayList<View> mFootViews, RecyclerView.Adapter mAdapter) {

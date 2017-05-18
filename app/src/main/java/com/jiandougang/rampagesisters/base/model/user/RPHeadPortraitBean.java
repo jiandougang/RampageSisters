@@ -15,9 +15,6 @@ public class RPHeadPortraitBean {
     private RPFile file;
 
 
-
-
-
     public String getClassName() {
         return className;
     }

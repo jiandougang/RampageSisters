@@ -5,6 +5,7 @@
         <attr name="textArray" format="reference" />
     </declare-styleable>
 
+
     <declare-styleable name="pull">
         <attr name="header" format="reference|integer" />
         <attr name="maxHeaderHeight" format="reference|dimension" />
@@ -12,8 +13,8 @@
     </declare-styleable>
 
     <declare-styleable name="ParallaxListView">
-        <attr name="enableZoom" format="boolean"/> <!--default=false-->
-        <attr name="zoomFactor" format="float"/> <!--default=1.0-->
-        <attr name="scrollMultiplier" format="float"/> <!--default=0.5-->
+        <attr name="enableZoom" format="boolean" /> <!--default=false-->
+        <attr name="zoomFactor" format="float" /> <!--default=1.0-->
+        <attr name="scrollMultiplier" format="float" /> <!--default=0.5-->
     </declare-styleable>
 </resources>
