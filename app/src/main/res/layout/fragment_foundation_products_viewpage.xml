@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="fuck you"
+        android:layout_height="wrap_content" />
+
+    <com.jiandougang.rampagesisters.main.view.pageRecyclerView.PageRecyclerView
+        android:id="@+id/pr_products"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.jiandougang.rampagesisters.main.view.pageRecyclerView.PageIndicatorView
+        android:id="@+id/pi_indicator"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.jiandougang.rampagesisters.InsuraceProducts;
+package com.jiandougang.rampagesisters.dezhoubank.insuranceProducts;
 
 import android.text.TextUtils;
 
@@ -26,6 +26,8 @@ public class InsuranceBean implements Serializable {
 
 
     private String productName;
+
+
     /**
      * insuranceScope : 18岁--55岁
      * paymentPeriod : ["3年","5年","10年"]
@@ -60,6 +62,16 @@ public class InsuranceBean implements Serializable {
     private String updatedAt;
     private List<String> paymentPeriod;
     private List<String> insurancePeriod;
+
+    /**
+     * characteristic : 死了绝逼能赔
+     * suitableCrowd : 老少咸宜
+     * briefIntroduction : 说了你也不懂，滚
+     */
+
+    private String characteristic;
+    private String suitableCrowd;
+    private String briefIntroduction;
 
     public String getProductName() {
         return productName;
@@ -138,4 +150,36 @@ public class InsuranceBean implements Serializable {
     public void setInsurancePeriod(List<String> insurancePeriod) {
         this.insurancePeriod = insurancePeriod;
     }
+
+    public String getCharacteristic() {
+        return characteristic;
+    }
+
+    public void setCharacteristic(String characteristic) {
+        this.characteristic = characteristic;
+    }
+
+    public String getSuitableCrowd() {
+        return suitableCrowd;
+    }
+
+    public void setSuitableCrowd(String suitableCrowd) {
+        this.suitableCrowd = suitableCrowd;
+    }
+
+    public String getBriefIntroduction() {
+        return briefIntroduction;
+    }
+
+    public void setBriefIntroduction(String briefIntroduction) {
+        this.briefIntroduction = briefIntroduction;
+    }
+    public String getInsuranceScope() {
+        return insuranceScope;
+    }
+
+    public void setInsuranceScope(String insuranceScope) {
+        this.insuranceScope = insuranceScope;
+    }
+
 }

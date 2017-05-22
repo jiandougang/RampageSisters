@@ -2,28 +2,30 @@
 
     <data>
 
-        <import type="com.jiandougang.rampagesisters.dezhoubank.insuranceProducts.InsuranceBean" />
+        <import type="com.jiandougang.rampagesisters.dezhoubank.foundation.FoundationBean" />
 
         <variable
-            name="insuranceBean"
-            type="InsuranceBean" />
+            name="foundationBean"
+            type="FoundationBean" />
     </data>
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:background="@drawable/list_item_selector"
-        android:layout_height="100dp">
+        android:layout_height="150dp">
 
         <ImageView
             android:id="@+id/icon"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_centerVertical="true"
             android:scaleType="fitXY"
             android:src="@mipmap/ic_launcher" />
 
         <RelativeLayout
+            android:id="@+id/rl_info"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/icon"
             android:paddingBottom="10dp"
@@ -32,16 +34,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{insuranceBean.productName}"
+                android:text="@{foundationBean.productName}"
                 android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:text="@{InsuranceBean.prefixPuttingTime(insuranceBean.puttingTime)}"
+                android:text="@{FoundationBean.prefixPuttingTime(foundationBean.puttingTime)}"
                 android:textSize="20sp" />
         </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_selected_state"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/rl_info"
+            android:background="@mipmap/image_check_off" />
 
     </RelativeLayout>
 

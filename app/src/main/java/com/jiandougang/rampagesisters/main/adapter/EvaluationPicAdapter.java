@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jiandougang.rampagesisters.R;
-import com.jiandougang.rampagesisters.InsuraceProducts.InsuranceProductsDisplayActivity;
+import com.jiandougang.rampagesisters.dezhoubank.insuranceProducts.InsuranceProductsDisplayActivity;
 import com.jiandougang.rampagesisters.main.model.EvaluationListBean;
 
 import java.util.ArrayList;
